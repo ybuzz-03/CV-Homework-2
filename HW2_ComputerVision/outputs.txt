@@ -1,0 +1,336 @@
+(venv) alessandro@Mac cv2627-main % /Users/alessandro/Desktop/University/5_Year/Computer_Vision/cv2627-main/venv/bin/python /Users/alessandro/Desktop/University/5_Year/Computer_Visi
+on/cv2627-main/HW2_ComputerVision/1_approach_finetuning.py
+Using device: mps
+
+Dim train:  92
+Dim val:  23
+Dim test:  115
+Modello classifier:  Sequential(
+  (0): Linear(in_features=576, out_features=1024, bias=True)
+  (1): Hardswish()
+  (2): Dropout(p=0.2, inplace=True)
+  (3): Linear(in_features=1024, out_features=1000, bias=True)
+)
+Modello nuovo:  Sequential(
+  (0): Linear(in_features=576, out_features=1024, bias=True)
+  (1): Hardswish()
+  (2): Dropout(p=0.2, inplace=True)
+  (3): Linear(in_features=1024, out_features=37, bias=True)
+)
+
+Conteggio immagini
+Immagini per classe in Train: 74 - 80
+Immagini per classe in Validation: 19 - 20
+Totale Test set: 3669 immagini
+Parametri addestrabili: 1555781
+
+Inizio addestramento
+
+Epoca 1 / 5
+---------------
+Train Loss: 3.1269 | Train Acc: 24.63%
+Val Loss: 2.0003 | Val Acc: 55.57%
+
+Epoca 2 / 5
+---------------
+Train Loss: 1.6037 | Train Acc: 65.96%
+Val Loss: 1.0037 | Val Acc: 76.63%
+
+Epoca 3 / 5
+---------------
+Train Loss: 0.8211 | Train Acc: 79.52%
+Val Loss: 0.6971 | Val Acc: 80.16%
+
+Epoca 4 / 5
+---------------
+Train Loss: 0.5423 | Train Acc: 86.07%
+Val Loss: 0.5774 | Val Acc: 83.56%
+
+Epoca 5 / 5
+---------------
+Train Loss: 0.3909 | Train Acc: 90.05%
+Val Loss: 0.5193 | Val Acc: 84.51%
+
+Miglior accuratezza in Validazione: 84.51%
+Tempo di addestramento: 73.49 secondi
+              precision    recall  f1-score   support
+
+           0       0.84      0.78      0.81        98
+           1       0.63      0.85      0.72       100
+           2       0.79      0.27      0.40       100
+           3       0.86      0.68      0.76       100
+           4       0.59      0.85      0.69       100
+           5       0.70      0.89      0.78       100
+           6       0.82      0.73      0.77       100
+           7       0.85      0.75      0.80        88
+           8       0.75      0.80      0.77        99
+           9       0.73      0.84      0.78       100
+          10       0.57      0.49      0.53       100
+          11       0.93      0.81      0.87        97
+          12       0.86      0.76      0.81       100
+          13       0.78      0.87      0.82       100
+          14       0.75      0.97      0.84       100
+          15       0.96      0.88      0.92       100
+          16       0.73      0.84      0.78       100
+          17       0.93      0.89      0.91       100
+          18       0.92      0.97      0.95        99
+          19       0.91      0.94      0.93       100
+          20       0.70      0.80      0.74       100
+          21       0.93      0.62      0.74       100
+          22       0.91      0.94      0.93       100
+          23       0.90      0.66      0.76       100
+          24       0.80      0.74      0.77       100
+          25       0.97      0.92      0.94       100
+          26       0.62      0.70      0.66       100
+          27       0.88      0.65      0.75       100
+          28       0.79      0.95      0.86       100
+          29       0.76      0.99      0.86       100
+          30       0.92      0.78      0.84        99
+          31       0.61      0.96      0.75       100
+          32       0.90      0.73      0.81       100
+          33       0.91      0.85      0.88       100
+          34       0.60      0.48      0.53        89
+          35       0.82      0.81      0.81       100
+          36       0.97      0.88      0.92       100
+
+    accuracy                           0.79      3669
+   macro avg       0.81      0.79      0.79      3669
+weighted avg       0.81      0.79      0.79      3669
+
+Matrice di confusione salvata in: /Users/alessandro/Desktop/University/5_Year/Computer_Vision/cv2627-main/HW2_ComputerVision/plots/Approach_1_Full_Fine-Tuning.png
+Griglia predizioni salvata in: /Users/alessandro/Desktop/University/5_Year/Computer_Vision/cv2627-main/HW2_ComputerVision/plots/Approach_1_Predictions.png
+Checkpoint salvato correttamente in: /Users/alessandro/Desktop/University/5_Year/Computer_Vision/cv2627-main/HW2_ComputerVision/checkpoints/checkpoint_approach_1.pth
+
+-------------------------------------------------
+
+(venv) alessandro@Mac cv2627-main % /Users/alessandro/Desktop/University/5_Year/Computer_Vision/cv2627-main/venv/bin/python /Users/alessandro/Desktop/University/5_Year/Computer_Visi
+on/cv2627-main/HW2_ComputerVision/2_approach_headtraining.py
+Using device: mps
+
+Dim train:  92
+Dim val:  23
+Dim test:  115
+Modello classifier:  Sequential(
+  (0): Linear(in_features=576, out_features=1024, bias=True)
+  (1): Hardswish()
+  (2): Dropout(p=0.2, inplace=True)
+  (3): Linear(in_features=1024, out_features=1000, bias=True)
+)
+Modello nuovo:  Sequential(
+  (0): Linear(in_features=576, out_features=1024, bias=True)
+  (1): Hardswish()
+  (2): Dropout(p=0.2, inplace=True)
+  (3): Linear(in_features=1024, out_features=37, bias=True)
+)
+
+Conteggio immagini
+Immagini per classe in Train: 74 - 80
+Immagini per classe in Validation: 19 - 20
+Totale Test set: 3669 immagini
+Parametri addestrabili: 628773
+
+Inizio addestramento
+
+Epoca 1 / 5
+---------------
+Train Loss: 1.1366 | Train Acc: 68.27%
+Val Loss: 0.5363 | Val Acc: 83.15%
+
+Epoca 2 / 5
+---------------
+Train Loss: 0.3564 | Train Acc: 88.96%
+Val Loss: 0.4030 | Val Acc: 86.96%
+
+Epoca 3 / 5
+---------------
+Train Loss: 0.2588 | Train Acc: 91.61%
+Val Loss: 0.4205 | Val Acc: 85.46%
+
+Epoca 4 / 5
+---------------
+Train Loss: 0.1645 | Train Acc: 95.07%
+Val Loss: 0.3550 | Val Acc: 88.18%
+
+Epoca 5 / 5
+---------------
+Train Loss: 0.1072 | Train Acc: 96.91%
+Val Loss: 0.4000 | Val Acc: 87.23%
+
+Miglior accuratezza in Validazione: 88.18%
+Tempo di addestramento: 44.30 secondi
+              precision    recall  f1-score   support
+
+           0       0.80      0.91      0.85        98
+           1       0.81      0.71      0.76       100
+           2       0.74      0.55      0.63       100
+           3       0.97      0.64      0.77       100
+           4       0.63      0.92      0.75       100
+           5       0.84      0.82      0.83       100
+           6       0.78      0.76      0.77       100
+           7       0.83      0.88      0.85        88
+           8       0.69      0.88      0.77        99
+           9       0.86      0.74      0.80       100
+          10       0.93      0.76      0.84       100
+          11       0.84      0.90      0.87        97
+          12       0.96      0.82      0.89       100
+          13       0.79      0.96      0.86       100
+          14       0.88      1.00      0.94       100
+          15       0.98      0.94      0.96       100
+          16       0.95      0.90      0.92       100
+          17       0.96      0.95      0.95       100
+          18       0.90      0.98      0.94        99
+          19       0.95      0.99      0.97       100
+          20       0.75      0.85      0.79       100
+          21       0.97      0.83      0.89       100
+          22       0.94      0.99      0.97       100
+          23       0.86      0.79      0.82       100
+          24       0.89      0.90      0.90       100
+          25       0.98      0.86      0.91       100
+          26       0.68      0.65      0.66       100
+          27       0.78      0.81      0.79       100
+          28       0.91      0.82      0.86       100
+          29       0.93      0.97      0.95       100
+          30       0.90      0.99      0.94        99
+          31       0.98      0.91      0.94       100
+          32       0.93      0.78      0.85       100
+          33       0.87      0.88      0.88       100
+          34       0.53      0.70      0.60        89
+          35       0.97      0.92      0.94       100
+          36       0.96      0.95      0.95       100
+
+    accuracy                           0.85      3669
+   macro avg       0.86      0.85      0.85      3669
+weighted avg       0.86      0.85      0.85      3669
+
+Matrice di confusione salvata in: /Users/alessandro/Desktop/University/5_Year/Computer_Vision/cv2627-main/HW2_ComputerVision/plots/Approach_2_Classifier_Head-Training.png
+Checkpoint salvato correttamente in: /Users/alessandro/Desktop/University/5_Year/Computer_Vision/cv2627-main/HW2_ComputerVision/checkpoints/checkpoint_approach_2.pth
+
+-------------------------------------------------
+
+(venv) alessandro@Mac cv2627-main % /Users/alessandro/Desktop/University/5_Year/Computer_Vision/cv2627-main/venv/bin/python /Users/alessandro/Desktop/University/5_Year/Computer_Visi
+on/cv2627-main/HW2_ComputerVision/3_approach_exfeature.py
+Using device: mps
+
+Dim train:  92
+Dim val:  23
+Dim test:  115
+Modello classifier:  Sequential(
+  (0): Linear(in_features=576, out_features=1024, bias=True)
+  (1): Hardswish()
+  (2): Dropout(p=0.2, inplace=True)
+  (3): Linear(in_features=1024, out_features=1000, bias=True)
+)
+Modello nuovo:  Sequential(
+  (0): Linear(in_features=576, out_features=1024, bias=True)
+  (1): Hardswish()
+  (2): Dropout(p=0.2, inplace=True)
+  (3): Linear(in_features=1024, out_features=37, bias=True)
+)
+
+Conteggio immagini
+Immagini per classe in Train: 74 - 80
+Immagini per classe in Validation: 19 - 20
+Totale Test set: 3669 immagini
+Parametri addestrabili: 0
+
+Inizio estrazione feature e addestramento SVM
+Formato feature Train:  (2944, 576)
+Formato feature Test:  (3669, 576)
+Tempo totale (Estrazione + Addestramento 2 SVM): 17.41 secondi
+Report lineare               precision    recall  f1-score   support
+
+           0       0.77      0.88      0.82        98
+           1       0.64      0.88      0.74       100
+           2       0.80      0.44      0.57       100
+           3       0.87      0.90      0.88       100
+           4       0.76      0.78      0.77       100
+           5       0.79      0.85      0.82       100
+           6       0.75      0.77      0.76       100
+           7       0.84      0.92      0.88        88
+           8       0.76      0.82      0.79        99
+           9       0.85      0.72      0.78       100
+          10       0.82      0.73      0.77       100
+          11       0.89      0.88      0.88        97
+          12       0.81      0.83      0.82       100
+          13       0.85      0.90      0.87       100
+          14       0.87      0.96      0.91       100
+          15       0.94      0.95      0.95       100
+          16       0.89      0.86      0.87       100
+          17       0.95      0.94      0.94       100
+          18       0.96      0.93      0.94        99
+          19       0.96      0.95      0.95       100
+          20       0.82      0.74      0.78       100
+          21       0.94      0.76      0.84       100
+          22       0.99      0.95      0.97       100
+          23       0.83      0.80      0.82       100
+          24       0.89      0.89      0.89       100
+          25       0.97      0.90      0.93       100
+          26       0.67      0.72      0.70       100
+          27       0.85      0.78      0.81       100
+          28       0.94      0.92      0.93       100
+          29       0.89      0.96      0.92       100
+          30       0.90      0.94      0.92        99
+          31       0.89      0.94      0.91       100
+          32       0.89      0.86      0.87       100
+          33       0.88      0.91      0.90       100
+          34       0.52      0.62      0.57        89
+          35       0.93      0.86      0.90       100
+          36       0.94      0.92      0.93       100
+
+    accuracy                           0.85      3669
+   macro avg       0.85      0.85      0.85      3669
+weighted avg       0.85      0.85      0.85      3669
+
+Report rbf               precision    recall  f1-score   support
+
+           0       0.79      0.91      0.85        98
+           1       0.64      0.89      0.75       100
+           2       0.84      0.42      0.56       100
+           3       0.91      0.88      0.89       100
+           4       0.79      0.86      0.82       100
+           5       0.72      0.93      0.81       100
+           6       0.73      0.85      0.79       100
+           7       0.84      0.92      0.88        88
+           8       0.75      0.87      0.81        99
+           9       0.86      0.70      0.77       100
+          10       0.83      0.71      0.76       100
+          11       0.98      0.86      0.91        97
+          12       0.90      0.82      0.86       100
+          13       0.86      0.93      0.89       100
+          14       0.88      0.99      0.93       100
+          15       0.92      0.95      0.94       100
+          16       0.90      0.90      0.90       100
+          17       0.93      0.93      0.93       100
+          18       0.97      0.97      0.97        99
+          19       0.95      0.96      0.96       100
+          20       0.80      0.68      0.74       100
+          21       0.99      0.82      0.90       100
+          22       0.98      0.97      0.97       100
+          23       0.89      0.78      0.83       100
+          24       0.92      0.88      0.90       100
+          25       0.97      0.95      0.96       100
+          26       0.69      0.67      0.68       100
+          27       0.80      0.77      0.79       100
+          28       0.89      0.94      0.91       100
+          29       0.88      0.98      0.93       100
+          30       0.94      0.95      0.94        99
+          31       0.86      0.96      0.91       100
+          32       0.91      0.84      0.88       100
+          33       0.87      0.90      0.89       100
+          34       0.57      0.57      0.57        89
+          35       0.93      0.89      0.91       100
+          36       0.99      0.91      0.95       100
+
+    accuracy                           0.86      3669
+   macro avg       0.86      0.86      0.85      3669
+weighted avg       0.86      0.86      0.86      3669
+
+Matrice di confusione salvata in: /Users/alessandro/Desktop/University/5_Year/Computer_Vision/cv2627-main/HW2_ComputerVision/plots/Approccio_3_SVM_Linear_su_Features.png
+Matrice di confusione salvata in: /Users/alessandro/Desktop/University/5_Year/Computer_Vision/cv2627-main/HW2_ComputerVision/plots/Approccio_3_SVM_RBF_su_Features.png
+
+Checkpoint SVM RBF salvato correttamente in: /Users/alessandro/Desktop/University/5_Year/Computer_Vision/cv2627-main/HW2_ComputerVision/checkpoints/checkpoint_approach_3_rbf.pkl
+Checkpoint SVM Lineare salvato correttamente in: /Users/alessandro/Desktop/University/5_Year/Computer_Vision/cv2627-main/HW2_ComputerVision/checkpoints/checkpoint_approach_3_linear.pkl
+
+
+
+
